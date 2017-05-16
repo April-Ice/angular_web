@@ -1,0 +1,35 @@
+{
+  "commons": {
+    "labels": {
+      "error": "Erreur"
+    }
+  },
+  "home": {
+    "title": "Angular App propulsée avec Webpack"
+  },
+  "header": {
+    "links": {
+      "about": "A propos",
+      "login": "Se logguer",
+      "my-account": "Mon compte"
+    }
+  },
+  "login": {
+    "title": "Page login",
+    "labels": {
+      "submit": "Login"
+    }
+  },
+  "components": {
+    "languages": {
+      "labels": {
+        "change": "Change language"
+      }
+    },
+    "modals": {
+      "body": {
+        "bad-credentials": "Mauvais login ou password !"
+      }
+    }
+  }
+}

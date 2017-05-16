@@ -1,0 +1,77 @@
+@import "../components/styles/sass/_vars.scss";
+.home {
+    height: 100%;
+    min-height: 100vh;
+    line-height: 2;
+    &-title {
+        color: $white;
+        line-height: 2;
+    }
+
+    //文字居中居左切换
+    .content-text {
+        text-align: center;
+    }
+    @media (min-width: 768px) {
+        .content-text {
+            text-align: right;
+        }
+    }
+ .home-top{
+     height: 20vh;
+    //  padding: 1rem 0;
+ }
+    .home-title {
+        @extend .loading-text;
+        background: #191919;
+        line-height: 4.6;
+    }
+    .content-title {
+        line-height: 4;
+    }
+    .index-img {
+        img {
+            width: 46%;
+            border-radius: 50%;
+        }
+    }
+    .index-content {
+        position: relative;
+        padding: 8vh 2rem 0;
+        &::before {
+            position: absolute;
+            top: 0;
+            content: '';
+        }
+    }
+    .triangles::before {//三角
+        background: #FC0;
+        top: -2rem;
+        left: 50%;
+        width: 4rem;
+        height: 4rem;
+        -webkit-transform: translateX(-50%) rotate(45deg);
+        transform: translateX(-50%) rotate(45deg);
+    }
+
+
+    //文字扫光
+    @-webkit-keyframes slideShine {
+        0% {
+            background-position: 0 0;
+        }
+        100% {
+            background-position: 100% 100%;
+        }
+    }
+    .loading-text {
+        background: #191919;
+        h2 {
+            background: #111 -webkit-linear-gradient(left, #111, #fff) 0 0 no-repeat;
+            -webkit-background-size: 1em;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: rgba(255, 255, 255, 0.6);
+            -webkit-animation: slideShine 6s infinite;
+        }
+    }
+}

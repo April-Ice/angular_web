@@ -1,0 +1,45 @@
+<nav class="navbar fixed-top navbar-toggleable-md background-blue1-sm">
+	<div class="container">
+		<button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+			<span class="navbar-toggler-icon"></span>
+		</button>
+		<a class="navbar-brand">
+			<i class="fa fa-firefox" aria-hidden="true"></i>
+		</a>
+		<div class="collapse navbar-collapse" id="navbarNavDropdown">
+			<ul class="navbar-nav mr-auto">
+				<li class="nav-item" routerLinkActive="active">
+					<a class="nav-link" [routerLink]="['home']">Home <span class="sr-only">(current)</span></a>
+				</li>
+				<li class="nav-item" routerLinkActive="active">
+					<a class="nav-link" *ngIf="!logged" [routerLink]="['login']">{{ 'header.links.login' | translate }}</a>
+					<a class="nav-link cursor-pointer" *ngIf="logged" (click)="logout()">Log Out</a>
+				</li>
+				<li class="nav-item" routerLinkActive="active">
+					<a class="nav-link" [routerLink]="['about']" [class.disabled]="!logged">{{ 'header.links.about' | translate }}</a>
+				</li>
+			</ul>
+			<div>
+				<ul class="navbar-nav margin-right-xs-xs">
+					<li class="nav-item" routerLinkActive="active">
+						<a class="nav-link" [routerLink]="['my-account']" *ngIf="logged">{{ 'header.links.my-account' | translate }}</a>
+					</li>
+				</ul>
+			</div>
+			<div ngbDropdown class="d-inline-block">
+				<button class="btn btn-outline-primary cursor-pointer text-uppercase" id="dropdownMenu1" ngbDropdownToggle>
+					{{ translateService.currentLang }}
+				</button>
+				<div class="dropdown-menu" aria-labelledby="dropdownMenu1">
+					<button
+							class="dropdown-item cursor-pointer text-uppercase"
+							*ngFor="let language of languages"
+							(click)="translateService.use(language);">
+						<img src="/public/img/flags/{{ language.toLowerCase() }}.png" style="width: 30px; height: 20px;" />
+						<span class="padding-left-xs-xs padding-top-xs-xs">{{ language }}</span>
+					</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</nav>

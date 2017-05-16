@@ -1,0 +1,9 @@
+$colors: (
+  white: $white,
+  blue1: $blue1,
+  green1: $green1,
+  black1: $black1,
+  black2: $black2
+);
+
+@include generate-colors($colors);
