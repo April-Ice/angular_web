@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { HttpModule, Http, XHRBackend, RequestOptions } from '@angular/http';
 import { BrowserModule }  from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { TranslateStaticLoader, TranslateLoader, TranslateModule } from 'ng2-translate';
 import { FormsModule } from '@angular/forms';
 
@@ -28,11 +29,12 @@ import { SlimLoadingBarService } from 'ng2-slim-loading-bar';
 import { routing } from './app.routing';
 import { SharedModule } from './commons/shared.module';
 
-import { HttpInterceptors } from './components/http/http.interceptors';
+import { HttpInterceptors } from './components/http/http.interceptors'
 
 @NgModule({
     imports: [
         BrowserModule,
+        BrowserAnimationsModule,
         HttpModule,
         FormsModule,
 	    NgbModule.forRoot(),
